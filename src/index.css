@@ -1,0 +1,217 @@
+:root {
+  --primary-color: rgb(63, 63, 213);
+  --background-color: rgb(157, 157, 212);
+  --menu-background-color: rgb(96, 96, 195);
+  --border-color: rgb(33, 33, 110);
+  --color-green: green;
+  --color-red: red;
+  --text-color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ROZLOŽENÍ STRÁNKY */
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  background-color: var(--background-color);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(165, 106, 42);
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.audio {
+  width: 60%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.menu {
+  padding: 0;
+}
+
+.menu li {
+  list-style: none;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  background-color: var(--menu-background-color);
+  padding: 8px 20px;
+  border-radius: 10px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* OBRÁZKY */
+.kids {
+  display: block;
+  width: 90%;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  margin: 20px;
+}
+
+.image-word {
+  max-width: 300px;
+}
+
+/* IKONY */
+.arrow {
+  display: block;
+  color: var(--color-green);
+  font-size: 40px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.home {
+  display: block;
+  font-size: 3rem;
+  text-align: center;
+  margin: 40px auto auto auto;
+}
+
+.icon {
+  display: block;
+  font-size: 50px;
+  cursor: pointer;
+  margin: 10px auto;
+}
+
+/* ODPOVĚDI */
+.answers {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.green {
+  background-color: var(--color-green);
+  box-shadow: 0px 0px 5px 10px var(--color-green);
+}
+
+.red {
+  background-color: var(--color-red);
+  box-shadow: 0px 0px 5px 10px var(--color-red);
+}
+
+.yes {
+  color: var(--color-green);
+}
+
+.no {
+  color: var(--color-red);
+}
+
+/* TLAČÍTKO PLAY */
+.play {
+  background-color: var(--menu-background-color);
+  color: var(--text-color);
+  font-size: 2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* QUESTIONS */
+.question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.counter {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* TEST WORDS */
+.all-answers-container {
+  max-width: 450px;
+}
+
+.all-answers {
+  display: block;
+  margin: 15px;
+}
+
+.btn {
+  display: block;
+  max-width: 200px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 2px;
+  margin: 10px auto;
+}
+
+.audio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.disabled {
+  color: grey;
+  cursor: not-allowed;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 650px) {
+  .page {
+    width: 600px;
+    height: 100vh;
+    border: 3px solid var(--border-color);
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .all-answers {
+    display: flex;
+    justify-content: center;
+  }
+}
