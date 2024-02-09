@@ -16,16 +16,17 @@ const Test = () => {
     const [index, setIndex] = useState(0)
     const [play, setPlay] = useState(false)
 
+
     const selectOption = (e) => {
         //zachycení vybrané možnosti
         const option = e.target.attributes[0].value
         switch (option) {
             case "house": setData(house)
-            break
+                break
             case "clothes": setData(clothes)
-            break
+                break
             case "winter": setData(winter)
-            break
+                break
             default: setData()
         }
         setStartGame(true)
@@ -33,25 +34,23 @@ const Test = () => {
 
     const newGame = () => {
         setPlay(true)
-        //vytvoření pole dvojic různých slov v allAnswers
+        //vytvoření pole dvojic nestejných slov v allAnswers
         setData(prevArray => (
             prevArray.map((oneWord) => (
                 {
                     ...oneWord,
                     allAnswers: [oneWord, data.filter(word => {
-                        return word.id !== oneWord.id
-                    })[Math.floor(Math.random() * data.length)]].sort(function () { return Math.random() - 0.5 }) //náhodné namíchání pole
+                        return word.id !== oneWord.id   //vrátí slova odlišná od prvního
+                    })[Math.floor(Math.random() * (data.length - 1))]].sort(function () { return Math.random() - 0.5 }) //náhodné namíchání pole
                 }
             ))
-        ))
-
+        ))      
     }
     //zachycení kliknutí na obrázek
     const checkAnswer = (title, index) => {
         setData(prevArray => (
             prevArray.map((question) => (
-                (question.id === index + 1) ?
-                    { ...question, selectedAnswer: title } : question
+                (question.id === index + 1) ? { ...question, selectedAnswer: title } : question
             ))
         ))
     }
@@ -81,6 +80,7 @@ const Test = () => {
                         </section>
                         <Footer /> </> :
                     play ?
+                
                         <section>
                             <div className='container'>
                                 <TestWords data={data} setData={setData} index={index} checkAnswer={checkAnswer} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} />
