@@ -1,5 +1,5 @@
 const TestWords = ({ index, checkAnswer, data, selectedAnswer, correctAnswer }) => {
-console.log(data);
+
     return (
         <div className="all-answers-container">
             <div className="all-answers">
