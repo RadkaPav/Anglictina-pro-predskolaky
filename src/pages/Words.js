@@ -6,7 +6,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Words = () => {
-  //UČENÍ SLOVÍČEK, VÝBĚR TÉMATU A SPUŠTĚNÍ HRY
   const [startGame, setStartGame] = useState(false)
   const [option, setOption] = useState()
 
