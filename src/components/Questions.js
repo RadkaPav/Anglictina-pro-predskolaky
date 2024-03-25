@@ -15,7 +15,6 @@ const Questions = ({ checkAnswer, index, data, image, selectedAnswer }) => {
         <div className='right'>
           <img alt=""
             src={checkMark}
-            // ZOBRAZENÍ ZELENÉHO/ČERVENÉHO POZADÍ PODLE SPRÁVNOSTI ODPOVĚDI
             className={(selectedAnswer === "yes") && (selectedAnswer === answer) ? 'icon yes green' : (selectedAnswer === "yes") ? "icon yes red" : "icon yes"}
             id='yes'
             onClick={(e) => checkAnswer(e, "yes")} />
@@ -26,7 +25,6 @@ const Questions = ({ checkAnswer, index, data, image, selectedAnswer }) => {
         <div className='wrong'>
           <img alt=""
             src={crossMark}
-            // ZOBRAZENÍ ZELENÉHO/ČERVENÉHO POZADÍ PODLE SPRÁVNOSTI ODPOVĚDI
             className={(selectedAnswer === "no") && (selectedAnswer === answer) ? 'icon no green' : (selectedAnswer === "no") ? "icon no red" : "icon no"}
             id='no'
             onClick={(e) => checkAnswer(e, "no")} />
