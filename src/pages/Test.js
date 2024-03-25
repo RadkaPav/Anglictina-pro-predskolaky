@@ -18,7 +18,6 @@ const Test = () => {
     const [loading, setLoading] = useState(true)
 
     const selectOption = (e) => {
-        //zachycení vybrané možnosti
         const option = e.target.attributes[0].value
         switch (option) {
             case "house": setData(house)
@@ -34,20 +33,19 @@ const Test = () => {
 
     const newGame = () => {
         setPlay(true)
-        //vytvoření pole dvojic nestejných slov v allAnswers
         setData(prevArray => (
             prevArray.map((oneWord) => (
                 {
                     ...oneWord,
                     allAnswers: [oneWord, data.filter(word => {
                         return word.id !== oneWord.id   //vrátí slova odlišná od prvního
-                    })[Math.floor(Math.random() * (data.length - 1))]].sort(function () { return Math.random() - 0.5 }) //náhodné namíchání pole
+                    })[Math.floor(Math.random() * (data.length - 1))]].sort(function () { return Math.random() - 0.5 }) 
                 }
             ))
         ))
         setLoading(false)      
     }
-    //zachycení kliknutí na obrázek
+    
     const checkAnswer = (title, index) => {
         setData(prevArray => (
             prevArray.map((question) => (
@@ -55,13 +53,11 @@ const Test = () => {
             ))
         ))
     }
-
-    //další otázka    
+  
     const nextQuestion = () => {
         setIndex(index + 1)
     }
 
-    //vybraná a správná odpověď
     const selectedAnswer = data[index].selectedAnswer
     const correctAnswer = data[index].title
 
