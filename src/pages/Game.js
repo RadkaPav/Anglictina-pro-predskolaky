@@ -18,7 +18,6 @@ const Game = () => {
   const [index, setIndex] = useState(0)
   const [play, setPlay] = useState(false)
 
-  //VZBRÁNÍ TÉMATU A SPUŠTĚNÍ HRY
   const selectOption = (e) => {
     const option = e.target.attributes[0].value
     if (option === "house") {
@@ -31,13 +30,12 @@ const Game = () => {
     }
     setStartGame(true)
   }
-  //DALŠÍ OTÁZKA
+ 
   const nextQuestion = (e) => {
     setIndex(index + 1)
   }
 
   const checkAnswer = (e, answer) => {
-    //ZVOLENOU MOŽNOST ULOŽÍ DO SELECTEDANSWER
     setData(prevArray => (
       prevArray.map((question) => (
         (question.id === index + 1) ?
@@ -71,7 +69,6 @@ const Game = () => {
           play ?
             <div>
               <Questions checkAnswer={checkAnswer} index={index} data={data} image={image} selectedAnswer={selectedAnswer} />
-              {/* PO POSLEDNÍ OTÁZCE ZOBRAZÍ IKONU HOME */}
               {(index < data.length - 1) ?
                 <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer}
                 />
