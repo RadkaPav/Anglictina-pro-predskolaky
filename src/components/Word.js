@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 const Word = ({ option }) => {
     const [index, setIndex] = useState(0)
-    //VÝBĚR TÉMATU
     let data = null
     switch (option) {
         case "house": data = house
@@ -22,13 +21,12 @@ const Word = ({ option }) => {
 
     const { img, sound } = data[index]
 
-    //POKUD SE DOJDE NA POSLEDNÍ SLOVO, POKRAČUJE SE ZASE PRVNÍ
     const checkIndex = (wordIndex) => {
         if (wordIndex > data.length - 1) {
             return 0
         } else return wordIndex
     }
-    //POSUN NA DALŠÍ SLOVO
+
     const nextWord = () => {
         setIndex(checkIndex(index + 1))
     }
