@@ -15,7 +15,6 @@ const Test = () => {
     const [data, setData] = useState(house)
     const [index, setIndex] = useState(0)
     const [play, setPlay] = useState(false)
-    const [loading, setLoading] = useState(true)
 
     const selectOption = (e) => {
         const option = e.target.attributes[0].value
@@ -43,7 +42,7 @@ const Test = () => {
                 }
             ))
         ))
-        setLoading(false)      
+         
     }
     
     const checkAnswer = (title, index) => {
@@ -77,7 +76,6 @@ const Test = () => {
                         </section>
                         <Footer /> </> :
                     play ?
-                    loading ? <h2>Načítání stránky...</h2> :
                         <section>
                             <div className='container'>
                                 <TestWords data={data} setData={setData} index={index} checkAnswer={checkAnswer} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} />
