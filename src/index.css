@@ -1,12 +1,6 @@
-:root {
-  --primary-color: rgb(63, 63, 213);
-  --background-color: rgb(157, 157, 212);
-  --menu-background-color: rgb(96, 96, 195);
-  --border-color: rgb(33, 33, 110);
-  --color-green: green;
-  --color-red: red;
-  --text-color: white;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;
@@ -17,8 +11,21 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+/*
+:root {
+  --primary-color: rgb(63, 63, 213);
+  --background-color: rgb(157, 157, 212);
+  --menu-background-color: rgb(96, 96, 195);
+  --border-color: rgb(33, 33, 110);
+  --color-green: green;
+  --color-red: red;
+  --text-color: white;
+}
 
-/* ROZLOŽENÍ STRÁNKY */
+
+
+
+ROZLOŽENÍ STRÁNKY
 .page {
   height: 100vh;
   display: flex;
@@ -74,7 +81,7 @@ a {
   cursor: pointer;
 }
 
-/* OBRÁZKY */
+OBRÁZKY 
 .kids {
   display: block;
   width: 90%;
@@ -95,7 +102,7 @@ a {
   max-width: 300px;
 }
 
-/* IKONY */
+IKONY
 .arrow {
   display: block;
   color: var(--color-green);
@@ -118,7 +125,7 @@ a {
   margin: 10px auto;
 }
 
-/* ODPOVĚDI */
+ODPOVĚDI 
 .answers {
   display: flex;
   justify-content: space-between;
@@ -143,7 +150,7 @@ a {
   color: var(--color-red);
 }
 
-/* TLAČÍTKO PLAY */
+TLAČÍTKO PLAY 
 .play {
   background-color: var(--menu-background-color);
   color: var(--text-color);
@@ -154,7 +161,7 @@ a {
   cursor: pointer;
 }
 
-/* QUESTIONS */
+QUESTIONS 
 .question-container {
   display: flex;
   flex-direction: column;
@@ -169,7 +176,7 @@ a {
   margin-bottom: 10px;
 }
 
-/* TEST WORDS */
+ TEST WORDS 
 .all-answers-container {
   max-width: 450px;
 }
@@ -200,7 +207,7 @@ a {
   cursor: not-allowed;
 }
 
-/* MEDIA QUERIES */
+MEDIA QUERIES 
 @media only screen and (min-width: 650px) {
   .page {
     width: 600px;
@@ -215,3 +222,4 @@ a {
     justify-content: center;
   }
 }
+*/
