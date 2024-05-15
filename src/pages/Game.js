@@ -12,6 +12,7 @@ import Footer from '../components/Footer'
 import answers from '../data/answers'
 import clothesImage from '../img-sound/clothes.png'
 import houseImage from '../img-sound/house.png'
+import MenuItem from '../components/MenuItem'
 
 const Game = () => {
   const [startGame, setStartGame] = useState(false)
@@ -63,11 +64,11 @@ const Game = () => {
             {/* <Header /> */}
             <section>
               <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
-                <li value="house" onClick={selectOption} className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3 text-center cursor-pointer'>
-                  <img src={houseImage} alt='' className='w-24 h-24 mb-2' /> House
+                <li onClick={selectOption}>
+                  <MenuItem value="house" imageName={houseImage} item="House" />
                 </li>
-                <li value="clothes" onClick={selectOption} className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3 text-center cursor-pointer'>
-                  <img src={clothesImage} alt='' className='w-24 h-24 mb-2' />Clothes
+                <li onClick={selectOption}>
+                  <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
                 </li>
                 <li>
                   <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>

@@ -5,18 +5,11 @@ import Footer from '../components/Footer'
 import flashcardsImage from '../img-sound/flashcards.png'
 import quizImage from '../img-sound/quiz.png'
 import questionMarkImage from '../img-sound/question-mark.png'
-
+import MenuItem from '../components/MenuItem'
 
 const Home = () => {
   const [isBlock, setIsBlock] = useState(true)
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsBlock(true)
-  //   }, 2000)
-
-  //   return () => clearTimeout(timer)
-  // }, [])
   return (
     <div className='h-screen relative'>
       <Header />
@@ -31,13 +24,13 @@ const Home = () => {
       <section className={` ${isBlock ? "block" : "hidden"}`}>
         <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
           <Link to="/words">
-            <li className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3  text-center cursor-pointer'><img src={flashcardsImage} alt='' className='w-24 h-24 mb-2' /> Flashcards</li>
+            <MenuItem imageName={flashcardsImage} item="Flashcards" />
           </Link>
           <Link to="/test">
-            <li className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3  text-center cursor-pointer'><img src={quizImage} alt='' className='w-24 h-24 mb-2' /> Quiz</li>
+            <MenuItem imageName={quizImage} item="Quiz" />
           </Link>
           <Link to="/game">
-            <li className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3 text-center cursor-pointer'><img src={questionMarkImage} alt='' className='w-24 h-24 mb-2' /> Questions</li>
+            <MenuItem imageName={questionMarkImage} item="Questions" />
           </Link>
         </ul>
       </section>
