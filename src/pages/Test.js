@@ -8,6 +8,9 @@ import clothes from '../data/clothes'
 import winter from '../data/winter'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import houseImage from '../img-sound/house.png'
+import clothesImage from '../img-sound/clothes.png'
+import winterImage from '../img-sound/winter.png'
 
 const Test = () => {
 
@@ -44,7 +47,7 @@ const Test = () => {
                     })[Math.floor(Math.random() * (data.length - 1))]].sort(function () { return Math.random() - 0.5 }) //náhodné namíchání pole
                 }
             ))
-        ))      
+        ))
     }
     //zachycení kliknutí na obrázek
     const checkAnswer = (title, index) => {
@@ -65,29 +68,35 @@ const Test = () => {
     const correctAnswer = data[index].title
 
     return (
-        <div className='page'>
+        <div>
             {
                 !startGame ?
                     <>
-                        <Header />
                         <section>
-                            <ul className='menu'>
-                                <li value="house" onClick={selectOption}>House</li>
-                                <li value="clothes" onClick={selectOption}>Clothes</li>
-                                <li value="winter" onClick={selectOption}>Winter</li>
+                            <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
+                                <li value="house" onClick={selectOption} className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3 text-center cursor-pointer'>
+                                    <img src={houseImage} alt='' className='w-24 h-24 mb-2' /> House
+                                </li>
+                                <li value="clothes" onClick={selectOption} className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3 text-center cursor-pointer'>
+                                    <img src={clothesImage} alt='' className='w-24 h-24 mb-2' />Clothes
+                                </li>
+                                <li value="winter" onClick={selectOption} className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3 text-center cursor-pointer'>
+                                    <img src={winterImage} alt='' className='w-24 h-24 mb-2' />
+                                    Winter</li>
+                                <li>
+                                    <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
+                                </li>
                             </ul>
-                            <Link to="/"><FaHome className='home' /></Link>
                         </section>
-                        <Footer /> </> :
+                    </> :
                     play ?
-                
                         <section>
                             <div className='container'>
                                 <TestWords data={data} setData={setData} index={index} checkAnswer={checkAnswer} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} />
                                 {(index < data.length - 1) ? <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} /> : <div></div>
                                 }
                             </div>
-                            <Link to="/"><FaHome className='home' /></Link>
+                            <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
                         </section> :
                         <div>
                             <button onClick={newGame} className='play'>Play</button>

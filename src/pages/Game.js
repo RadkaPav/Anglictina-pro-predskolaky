@@ -5,11 +5,13 @@ import { FaHome } from "react-icons/fa"
 import Arrow from '../components/Arrow'
 import houseQuestions from '../data/house-questions'
 import clothesQuestions from '../data/clothesQuestions'
-import houseImage from "../questions/house/house.png"
-import clothesImage from "../questions/clothes/clothes.png"
+import houseImage1 from "../questions/house/house.png"
+import clothesImage1 from "../questions/clothes/clothes.png"
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import answers from '../data/answers'
+import clothesImage from '../img-sound/clothes.png'
+import houseImage from '../img-sound/house.png'
 
 const Game = () => {
   const [startGame, setStartGame] = useState(false)
@@ -23,11 +25,11 @@ const Game = () => {
     const option = e.target.attributes[0].value
     if (option === "house") {
       setData(houseQuestions)
-      setImage(houseImage)
+      setImage(houseImage1)
     }
     if (option === "clothes") {
       setData(clothesQuestions)
-      setImage(clothesImage)
+      setImage(clothesImage1)
     }
     setStartGame(true)
   }
@@ -58,15 +60,20 @@ const Game = () => {
       {
         !startGame ?
           <>
-            <Header />
+            {/* <Header /> */}
             <section>
-              <ul className='menu'>
-                <li value="house" onClick={selectOption}>House</li>
-                <li value="clothes" onClick={selectOption}>Clothes</li>
+              <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
+                <li value="house" onClick={selectOption} className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3 text-center cursor-pointer'>
+                  <img src={houseImage} alt='' className='w-24 h-24 mb-2' /> House
+                </li>
+                <li value="clothes" onClick={selectOption} className='text-xl border-solid border-2 border-black inline-block rounded-lg p-3 text-center cursor-pointer'>
+                  <img src={clothesImage} alt='' className='w-24 h-24 mb-2' />Clothes
+                </li>
+                <li>
+                  <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
+                </li>
               </ul>
-              <Link to="/"><FaHome className='home' /></Link>
             </section>
-            <Footer />
           </> :
           play ?
             <div>
@@ -75,7 +82,7 @@ const Game = () => {
               {(index < data.length - 1) ?
                 <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer}
                 />
-                : <Link to="/"><FaHome className='home' /></Link>}
+                : <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>}
             </div> :
             <div>
               <button onClick={() => setPlay(true)} className='play'>Play</button>
