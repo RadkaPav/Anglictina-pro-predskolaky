@@ -8,31 +8,28 @@ import houseImage from '../img-sound/house.png'
 import clothesImage from '../img-sound/clothes.png'
 import winterImage from '../img-sound/winter.png'
 import MenuItem from '../components/MenuItem'
+import house from '../data/house'
+import clothes from '../data/clothes'
+import winter from '../data/winter'
 
 const Words = () => {
-  //UČENÍ SLOVÍČEK, VÝBĚR TÉMATU A SPUŠTĚNÍ HRY
   const [startGame, setStartGame] = useState(false)
-  const [option, setOption] = useState()
-
-  const selectOption = (e) => {
-    setOption(e.target.attributes[0].value)
-    setStartGame(true)
-  }
+  const [data, setData] = useState()
  
   return (
     <div>
       {
-        startGame ? <Word option={option} /> :
+        startGame ? <Word data={data} /> :
           <>
             <section>
               <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
-                <li onClick={selectOption}>
+                <li onClick={() => {setData(house); setStartGame(true)}}>
                   <MenuItem value="house" imageName={houseImage} item="House" />
                 </li>
-                <li onClick={selectOption}>
+                <li onClick={() => {setData(clothes); setStartGame(true)}}>
                   <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
                 </li>
-                <li onClick={selectOption}>
+                <li onClick={() => {setData(winter); setStartGame(true)}}>
                   <MenuItem value="winter" imageName={winterImage} item="Winter" />
                 </li>
                 <li>

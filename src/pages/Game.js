@@ -19,21 +19,7 @@ const Game = () => {
   const [data, setData] = useState(houseQuestions)
   const [image, setImage] = useState()
   const [index, setIndex] = useState(0)
-  const [play, setPlay] = useState(false)
 
-  //VZBRÁNÍ TÉMATU A SPUŠTĚNÍ HRY
-  const selectOption = (e) => {
-    const option = e.target.attributes[0].value
-    if (option === "house") {
-      setData(houseQuestions)
-      setImage(houseImage1)
-    }
-    if (option === "clothes") {
-      setData(clothesQuestions)
-      setImage(clothesImage1)
-    }
-    setStartGame(true)
-  }
   //DALŠÍ OTÁZKA
   const nextQuestion = (e) => {
     setIndex(index + 1)
@@ -57,17 +43,17 @@ const Game = () => {
   const correctAnswer = data[index].answer
 
   return (
-    <div className='page'>
+    <div>
       {
         !startGame ?
           <>
             {/* <Header /> */}
             <section>
               <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
-                <li onClick={selectOption}>
+                <li onClick={() => { setData(houseQuestions); setImage(houseImage1); setStartGame(true) }}>
                   <MenuItem value="house" imageName={houseImage} item="House" />
                 </li>
-                <li onClick={selectOption}>
+                <li onClick={() => { setData(clothesQuestions); setImage(clothesImage1); setStartGame(true) }}>
                   <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
                 </li>
                 <li>
@@ -76,21 +62,15 @@ const Game = () => {
               </ul>
             </section>
           </> :
-          play ?
-            <div>
-              <Questions checkAnswer={checkAnswer} index={index} data={data} image={image} selectedAnswer={selectedAnswer} />
-              {/* PO POSLEDNÍ OTÁZCE ZOBRAZÍ IKONU HOME */}
-              {(index < data.length - 1) ?
-                <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer}
-                />
-                : <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>}
-            </div> :
-            <div>
-              <button onClick={() => setPlay(true)} className='play'>Play</button>
-            </div>
+          <div>
+            <Questions checkAnswer={checkAnswer} index={index} data={data} image={image} selectedAnswer={selectedAnswer} />
+            {(index < data.length - 1) ?
+              <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer}
+              /> :
+              <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>}
+          </div>
       }
     </div>
-
   )
 }
 

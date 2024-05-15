@@ -14,30 +14,14 @@ import winterImage from '../img-sound/winter.png'
 import MenuItem from '../components/MenuItem'
 
 const Test = () => {
-
     const [startGame, setStartGame] = useState(false)
     const [data, setData] = useState(house)
     const [index, setIndex] = useState(0)
-    const [play, setPlay] = useState(false)
 
-
-    const selectOption = (e) => {
-        //zachycení vybrané možnosti
-        const option = e.target.attributes[0].value
-        switch (option) {
-            case "house": setData(house)
-                break
-            case "clothes": setData(clothes)
-                break
-            case "winter": setData(winter)
-                break
-            default: setData()
-        }
-        setStartGame(true)
-    }
+    const selectedAnswer = data[index].selectedAnswer
+    const correctAnswer = data[index].title
 
     const newGame = () => {
-        setPlay(true)
         //vytvoření pole dvojic nestejných slov v allAnswers
         setData(prevArray => (
             prevArray.map((oneWord) => (
@@ -50,6 +34,7 @@ const Test = () => {
             ))
         ))
     }
+
     //zachycení kliknutí na obrázek
     const checkAnswer = (title, index) => {
         setData(prevArray => (
@@ -64,10 +49,6 @@ const Test = () => {
         setIndex(index + 1)
     }
 
-    //vybraná a správná odpověď
-    const selectedAnswer = data[index].selectedAnswer
-    const correctAnswer = data[index].title
-
     return (
         <div>
             {
@@ -75,14 +56,14 @@ const Test = () => {
                     <>
                         <section>
                             <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
-                                <li onClick={selectOption}>
-                                    <MenuItem value="house" selectOption={selectOption} imageName={houseImage} item="House" />
+                                <li onClick={() => { setData(house); setStartGame(true); newGame() }}>
+                                    <MenuItem value="house" imageName={houseImage} item="House" />
                                 </li>
-                                <li onClick={selectOption}>
-                                    <MenuItem value="clothes" selectOption={selectOption} imageName={clothesImage} item="Clothes" />
+                                <li onClick={() => { setData(clothes); setStartGame(true); newGame() }}>
+                                    <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
                                 </li>
-                                <li onClick={selectOption}>
-                                    <MenuItem value="winter" selectOption={selectOption} imageName={winterImage} item="Winter" />
+                                <li onClick={() => { setData(winter); setStartGame(true); newGame() }}>
+                                    <MenuItem value="winter" imageName={winterImage} item="Winter" />
                                 </li>
                                 <li>
                                     <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
@@ -90,7 +71,7 @@ const Test = () => {
                             </ul>
                         </section>
                     </> :
-                    play ?
+                    // play ?
                         <section>
                             <div className='container'>
                                 <TestWords data={data} setData={setData} index={index} checkAnswer={checkAnswer} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} />
@@ -98,10 +79,11 @@ const Test = () => {
                                 }
                             </div>
                             <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
-                        </section> :
-                        <div>
-                            <button onClick={newGame} className='play'>Play</button>
-                        </div>
+                        </section>
+                        //  :
+                        // <div>
+                        //     <button onClick={newGame} className='play'>Play</button>
+                        // </div>
             }
         </div>
     )
