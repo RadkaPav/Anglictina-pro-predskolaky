@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -9,6 +9,11 @@ import MenuItem from '../components/MenuItem'
 
 const Home = () => {
   const [isBlock, setIsBlock] = useState(true)
+  const menu = useRef(null)
+
+  const scrollToMenu = () => {
+    menu.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <main className=''>
@@ -16,13 +21,13 @@ const Home = () => {
         <Header />
         <Footer />
         <div className='w-screen'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-black mx-auto animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-black mx-auto animate-bounce" onClick={scrollToMenu}>
             <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
           </svg>
         </div>
       </section>
 
-      <section className={` ${isBlock ? "block" : "hidden"}`}>
+      <section className={` ${isBlock ? "block" : "hidden"}`} id='menu' ref={menu}>
         <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
           <Link to="/words">
             <MenuItem imageName={flashcardsImage} item="Flashcards" />
