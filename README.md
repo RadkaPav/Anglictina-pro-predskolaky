@@ -1,3 +1,22 @@
+# Popis projektu
+Cílem bylo vytvořit webovou aplikaci na procvičování angličtiny pro děti, které ještě neumí číst.\\
+Aplikace obsahuje tyto moduly:\
+- flashcards: na kartičce se zobrazí obrázek, po kliknutí na přehrávač se přehraje zvukový záznam slova
+- quiz: výběr ze dvou obrázků (slov), po kliknutí na přehrávač se přehraje slovo, úkolem je vybrat správný obrázek, správnost volby se potvrdí barevným rámečkem, po správné odpovědi je možné pokračovat na další úkol
+- questions: po kliknutí na přehrávač se přehraje otázka vztahující se k zobrazenému obrázku, odpověď je výběrem ze dvou možností, po kliknutí na odpověď se přehraje zvuková nahrávka, po správné odpovědi lze pokračovat k další otázce
+
+## Co jsem se v projektu naučila
+- vytvořit webovou aplikaci pomocí javascriptové knihovny React.js
+- rozdělení aplikace do komponent
+- použití useState, useRef
+- použití React Router a React Icons
+- publikace projektu na Netlify.com
+- použití framworku Tailwind
+
+## Screenshots
+
+![Snímek obrazovky 2024-05-17 230749](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/e44a0f88-35fb-46da-9277-0edb7e4619e4)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
