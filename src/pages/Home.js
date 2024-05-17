@@ -15,8 +15,8 @@ const Home = () => {
   };
 
   return (
-    <main className='h-screen'>
-      <section className='flex flex-col items-center'>
+    <main>
+      <section className='h-screen flex flex-col justify-center'>
         <Header />
         <Footer />
         <div className='w-screen bottom-2 cursor-pointer'>
