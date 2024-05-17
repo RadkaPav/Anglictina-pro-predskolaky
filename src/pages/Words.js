@@ -2,15 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import HomeIcon from '../components/HomeIcon'
 import Word from "../components/Word"
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import houseImage from '../img-sound/house.png'
-import clothesImage from '../img-sound/clothes.png'
-import winterImage from '../img-sound/winter.png'
 import MenuItem from '../components/MenuItem'
 import house from '../data/house'
 import clothes from '../data/clothes'
 import winter from '../data/winter'
+import houseImage from '../img-sound/house.png'
+import clothesImage from '../img-sound/clothes.png'
+import winterImage from '../img-sound/winter.png'
 
 const Words = () => {
   const [startGame, setStartGame] = useState(false)

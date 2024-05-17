@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import Questions from '../components/Questions'
 import { Link } from 'react-router-dom'
+import Questions from '../components/Questions'
 import HomeIcon from '../components/HomeIcon'
 import Arrow from '../components/Arrow'
+import MenuItem from '../components/MenuItem'
 import houseQuestions from '../data/house-questions'
 import clothesQuestions from '../data/clothesQuestions'
+import answers from '../data/answers'
 import houseImage1 from "../questions/house/house.png"
 import clothesImage1 from "../questions/clothes/clothes.png"
-import answers from '../data/answers'
 import clothesImage from '../img-sound/clothes.png'
 import houseImage from '../img-sound/house.png'
-import MenuItem from '../components/MenuItem'
 
 const Game = () => {
   const [startGame, setStartGame] = useState(false)
@@ -18,13 +18,11 @@ const Game = () => {
   const [image, setImage] = useState()
   const [index, setIndex] = useState(0)
 
-  //DALŠÍ OTÁZKA
   const nextQuestion = (e) => {
     setIndex(index + 1)
   }
 
   const checkAnswer = (e, answer) => {
-    //ZVOLENOU MOŽNOST ULOŽÍ DO SELECTEDANSWER
     setData(prevArray => (
       prevArray.map((question) => (
         (question.id === index + 1) ?

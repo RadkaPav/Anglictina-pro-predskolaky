@@ -7,14 +7,12 @@ const TestWords = ({ index, checkAnswer, data, selectedAnswer, correctAnswer, ne
             <div className="flex flex-col justify-center items-center w-[90%] h-[80%] mx-5 space-y-5 
                     sm:flex-row sm:space-y-0 ">
                 {
-                    //ZOBRAZENÍ DVOJIC SLOV
                     data[index].allAnswers.map((item) => {
 
                         const { img, id, title } = item
 
                         return <button className="block bg-transparent cursor-pointer mx-auto h-[45%] sm:h-4/5" onClick={() => checkAnswer(title, index)} key={id}>
                             <img src={img} alt=""
-                                //ZOBRAZENÍ ZELENÉHO/ČERVENÉHO POZADÍ PODLE SPRÁVNOSTI ODPOVĚDI
                                 className={(selectedAnswer === item.title) && (selectedAnswer === correctAnswer) ?
                                     'shadow-[0px_0px_5px_10px_green] h-full' : (selectedAnswer === item.title) && (selectedAnswer !== correctAnswer) ?
                                         "shadow-[0px_0px_5px_10px_red] h-full" : "h-full"}

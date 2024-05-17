@@ -7,13 +7,12 @@ const Word = ({ data }) => {
     const [index, setIndex] = useState(0)
     const { img, sound } = data[index]
 
-    //POKUD SE DOJDE NA POSLEDNÍ SLOVO, POKRAČUJE SE ZASE PRVNÍ
     const checkIndex = (wordIndex) => {
         if (wordIndex > data.length - 1) {
             return 0
         } else return wordIndex
     }
-    //POSUN NA DALŠÍ SLOVO
+
     const nextWord = () => {
         setIndex(checkIndex(index + 1))
     }

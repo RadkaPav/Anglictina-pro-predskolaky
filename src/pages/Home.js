@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import MenuItem from '../components/MenuItem'
 import flashcardsImage from '../img-sound/flashcards.png'
 import quizImage from '../img-sound/quiz.png'
 import questionMarkImage from '../img-sound/question-mark.png'
-import MenuItem from '../components/MenuItem'
 
 const Home = () => {
   const menu = useRef(null)
@@ -15,7 +15,7 @@ const Home = () => {
   };
 
   return (
-    <main className=''>
+    <main>
       <section className='h-screen relative'>
         <Header />
         <Footer />

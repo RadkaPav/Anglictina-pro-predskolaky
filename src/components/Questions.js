@@ -17,7 +17,6 @@ const Questions = ({ checkAnswer, index, data, image, selectedAnswer }) => {
         <div className='sm:w-1/2'>
           <img alt=""
             src={checkMark}
-            // ZOBRAZENÍ ZELENÉHO/ČERVENÉHO POZADÍ PODLE SPRÁVNOSTI ODPOVĚDI
             className={(selectedAnswer === "yes") && (selectedAnswer === answer) ?
               'cursor-pointer my-2 mx-auto shadow-[0px_0px_5px_10px_rgb(0,128,0)] bg-[rgb(0,128,0)]' : (selectedAnswer === "yes") ?
                 "cursor-pointer my-2 mx-auto shadow-[0px_0px_5px_10px_rgb(255,0,0)] bg-[rgb(255,0,0)]" : "cursor-pointer my-2 mx-auto "}
@@ -30,7 +29,6 @@ const Questions = ({ checkAnswer, index, data, image, selectedAnswer }) => {
         <div className='sm:w-1/2'>
           <img alt=""
             src={crossMark}
-            // ZOBRAZENÍ ZELENÉHO/ČERVENÉHO POZADÍ PODLE SPRÁVNOSTI ODPOVĚDI
             className={(selectedAnswer === "no") && (selectedAnswer === answer) ?
               'cursor-pointer my-2 mx-auto shadow-[0px_0px_5px_10px_rgb(0,128,0)] bg-[rgb(0,128,0)]' : (selectedAnswer === "no") ?
                 'cursor-pointer my-2 mx-auto shadow-[0px_0px_5px_10px_rgb(255,0,0)] bg-[rgb(255,0,0)]' : "cursor-pointer my-2 mx-auto"}

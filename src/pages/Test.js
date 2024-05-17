@@ -2,16 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import HomeIcon from '../components/HomeIcon'
 import TestWords from '../components/TestWords'
-import Arrow from '../components/Arrow'
+import MenuItem from '../components/MenuItem'
 import house from '../data/house'
 import clothes from '../data/clothes'
 import winter from '../data/winter'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import houseImage from '../img-sound/house.png'
 import clothesImage from '../img-sound/clothes.png'
 import winterImage from '../img-sound/winter.png'
-import MenuItem from '../components/MenuItem'
 
 const Test = () => {
     const [startGame, setStartGame] = useState(false)
@@ -22,20 +19,18 @@ const Test = () => {
     const correctAnswer = data[index].title
 
     const newGame = () => {
-        //vytvoření pole dvojic nestejných slov v allAnswers
         setData(prevArray => (
             prevArray.map((oneWord) => (
                 {
                     ...oneWord,
                     allAnswers: [oneWord, data.filter(word => {
-                        return word.id !== oneWord.id   //vrátí slova odlišná od prvního
-                    })[Math.floor(Math.random() * (data.length - 1))]].sort(function () { return Math.random() - 0.5 }) //náhodné namíchání pole
+                        return word.id !== oneWord.id   
+                    })[Math.floor(Math.random() * (data.length - 1))]].sort(function () { return Math.random() - 0.5 })
                 }
             ))
         ))
     }
 
-    //zachycení kliknutí na obrázek
     const checkAnswer = (title, index) => {
         setData(prevArray => (
             prevArray.map((question) => (
@@ -43,8 +38,7 @@ const Test = () => {
             ))
         ))
     }
-
-    //další otázka    
+   
     const nextQuestion = () => {
         setIndex(index + 1)
     }
