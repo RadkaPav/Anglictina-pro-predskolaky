@@ -6,13 +6,15 @@ const Questions = ({ checkAnswer, index, data, image, selectedAnswer }) => {
   const { sound, answer } = data[index]
 
   return (
-    <section className='flex flex-col justify-center items-center mx-auto p-3'>
-      <img src={image} alt="" className='w-full m-5' />
-      <p className='mb-3 text-sm'>{`${index + 1}/10`} </p>
-      <audio src={sound} controls className='w-[80%] h-7 mb-3' />
+    <section className='flex flex-col justify-center items-center p-3 sm:flex-row'>
+      <div className='max-h-1/2'>
+        <img src={image} alt="" className='max-h-[450px] my-3'/>
+        <p className='mb-3 text-sm text-center'>{`${index + 1}/10`} </p>
+        <audio src={sound} controls className='w-[80%] h-7 mb-3 mx-auto' />
+      </div>
 
-      <div className='flex justify-around w-full'>
-        <div>
+      <div className='flex justify-around w-full sm:flex-col sm:items-center sm:w-1/2'>
+        <div className='sm:w-1/2'>
           <img alt=""
             src={checkMark}
             // ZOBRAZENÍ ZELENÉHO/ČERVENÉHO POZADÍ PODLE SPRÁVNOSTI ODPOVĚDI
@@ -22,10 +24,10 @@ const Questions = ({ checkAnswer, index, data, image, selectedAnswer }) => {
             id='yes'
             onClick={(e) => checkAnswer(e, "yes")} />
           <audio src={answers[0].sound} />
-          <p>Yes, there is</p>
+          <p className='text-center'>Yes, there is</p>
         </div>
 
-        <div>
+        <div className='sm:w-1/2'>
           <img alt=""
             src={crossMark}
             // ZOBRAZENÍ ZELENÉHO/ČERVENÉHO POZADÍ PODLE SPRÁVNOSTI ODPOVĚDI
@@ -35,7 +37,7 @@ const Questions = ({ checkAnswer, index, data, image, selectedAnswer }) => {
             id='no'
             onClick={(e) => checkAnswer(e, "no")} />
           <audio src={answers[1].sound} />
-          <p>No, there is not.</p>
+          <p className='text-center'>No, there is not.</p>
         </div>
       </div>
     </section>

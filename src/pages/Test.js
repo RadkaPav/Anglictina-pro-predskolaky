@@ -54,8 +54,9 @@ const Test = () => {
             {
                 !startGame ?
                     <>
-                        <section>
-                            <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
+                        <section className='h-screen flex flex-col space-y-5 items-center justify-center'>
+                            <ul className='w-[80vw] flex flex-col space-y-5 items-center justify-center
+                                           sm:flex-row sm:justify-evenly sm:space-y-0'>
                                 <li onClick={() => { setData(house); setStartGame(true); newGame() }}>
                                     <MenuItem value="house" imageName={houseImage} item="House" />
                                 </li>
@@ -65,10 +66,10 @@ const Test = () => {
                                 <li onClick={() => { setData(winter); setStartGame(true); newGame() }}>
                                     <MenuItem value="winter" imageName={winterImage} item="Winter" />
                                 </li>
-                                <li>
-                                    <Link to="/"><HomeIcon /></Link>
-                                </li>
                             </ul>
+                                <div>
+                                    <Link to="/"><HomeIcon /></Link>
+                                </div>
                         </section>
                     </> :
                     <section className='flex flex-col justify-center items-center h-screen'>

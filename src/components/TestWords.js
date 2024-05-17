@@ -4,14 +4,15 @@ const TestWords = ({ index, checkAnswer, data, selectedAnswer, correctAnswer, ne
 
     return (
         <div className='flex flex-col justify-center items-center border-2 border-solid border-black rounded-xl bg-white p-2 mb-5 max-w-[90vw] max-h-[85vh]'>
-            <div className="block w-[90%] h-[80%] mx-5 space-y-5">
+            <div className="flex flex-col justify-center items-center w-[90%] h-[80%] mx-5 space-y-5 
+                    sm:flex-row sm:space-y-0 ">
                 {
                     //ZOBRAZENÍ DVOJIC SLOV
                     data[index].allAnswers.map((item) => {
 
                         const { img, id, title } = item
 
-                        return <button className="block bg-transparent cursor-pointer mx-auto h-[45%]" onClick={() => checkAnswer(title, index)} key={id}>
+                        return <button className="block bg-transparent cursor-pointer mx-auto h-[45%] sm:h-4/5" onClick={() => checkAnswer(title, index)} key={id}>
                             <img src={img} alt=""
                                 //ZOBRAZENÍ ZELENÉHO/ČERVENÉHO POZADÍ PODLE SPRÁVNOSTI ODPOVĚDI
                                 className={(selectedAnswer === item.title) && (selectedAnswer === correctAnswer) ?

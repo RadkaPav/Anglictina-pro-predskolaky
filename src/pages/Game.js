@@ -7,8 +7,6 @@ import houseQuestions from '../data/house-questions'
 import clothesQuestions from '../data/clothesQuestions'
 import houseImage1 from "../questions/house/house.png"
 import clothesImage1 from "../questions/clothes/clothes.png"
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import answers from '../data/answers'
 import clothesImage from '../img-sound/clothes.png'
 import houseImage from '../img-sound/house.png'
@@ -43,26 +41,24 @@ const Game = () => {
   const correctAnswer = data[index].answer
 
   return (
-    <div className='flex justify-center items-center h-screen'>
+    <div className='h-screen flex justify-center items-center'>
       {
-        !startGame ?
-          <>
-            {/* <Header /> */}
-            <section>
-              <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
+        !startGame ? 
+            <section className='h-screen flex flex-col space-y-5 items-center justify-center'>
+              <ul className='w-[80vw] flex flex-col space-y-5 items-center justify-center
+                             sm:flex-row sm:justify-evenly sm:space-y-0'>
                 <li onClick={() => { setData(houseQuestions); setImage(houseImage1); setStartGame(true) }}>
                   <MenuItem value="house" imageName={houseImage} item="House" />
                 </li>
                 <li onClick={() => { setData(clothesQuestions); setImage(clothesImage1); setStartGame(true) }}>
                   <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
                 </li>
-                <li>
-                  <Link to="/"><HomeIcon /></Link>
-                </li>
               </ul>
-            </section>
-          </> :
-          <section  className='flex flex-col justify-center items-center'>
+                <div>
+                  <Link to="/"><HomeIcon /></Link>
+                </div>
+            </section> :
+          <section  className='h-screen flex flex-col justify-center items-center'>
             <Questions checkAnswer={checkAnswer} index={index} data={data} image={image} selectedAnswer={selectedAnswer} />
             {(index < data.length - 1) ?
               <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer}

@@ -21,8 +21,9 @@ const Words = () => {
       {
         startGame ? <Word data={data} /> :
           <>
-            <section>
-              <ul className='h-[100vh] flex flex-col space-y-5 items-center justify-center'>
+            <section className='h-screen flex flex-col space-y-5 items-center justify-center'>
+              <ul className='w-[80vw] flex flex-col space-y-5 items-center justify-center
+                             sm:flex-row sm:justify-evenly sm:space-y-0'>
                 <li onClick={() => {setData(house); setStartGame(true)}}>
                   <MenuItem value="house" imageName={houseImage} item="House" />
                 </li>
@@ -32,10 +33,10 @@ const Words = () => {
                 <li onClick={() => {setData(winter); setStartGame(true)}}>
                   <MenuItem value="winter" imageName={winterImage} item="Winter" />
                 </li>
-                <li>
-                  <Link to="/"><HomeIcon /></Link>
-                </li>
               </ul>
+                <div>
+                  <Link to="/"><HomeIcon /></Link>
+                </div>
             </section>
           </>
       }
