@@ -1,6 +1,7 @@
 # Popis projektu
-Cílem bylo vytvořit webovou aplikaci na procvičování angličtiny pro děti, které ještě neumí číst.\\
-Aplikace obsahuje tyto moduly:\
+Cílem bylo vytvořit webovou aplikaci na procvičování angličtiny pro děti, které ještě neumí číst.\
+\
+Aplikace obsahuje tyto moduly:
 - flashcards: na kartičce se zobrazí obrázek, po kliknutí na přehrávač se přehraje zvukový záznam slova
 - quiz: výběr ze dvou obrázků (slov), po kliknutí na přehrávač se přehraje slovo, úkolem je vybrat správný obrázek, správnost volby se potvrdí barevným rámečkem, po správné odpovědi je možné pokračovat na další úkol
 - questions: po kliknutí na přehrávač se přehraje otázka vztahující se k zobrazenému obrázku, odpověď je výběrem ze dvou možností, po kliknutí na odpověď se přehraje zvuková nahrávka, po správné odpovědi lze pokračovat k další otázce
