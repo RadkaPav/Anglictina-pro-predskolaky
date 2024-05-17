@@ -8,7 +8,6 @@ const TestWords = ({ index, checkAnswer, data, selectedAnswer, correctAnswer, ne
                     sm:flex-row sm:space-y-0 sm:space-x-5">
                 {
                     data[index].allAnswers.map((item) => {
-
                         const { img, id, title } = item
 
                         return <button className="block bg-transparent cursor-pointer mx-auto h-[45%] sm:h-4/5" onClick={() => checkAnswer(title, index)} key={id}>
