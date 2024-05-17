@@ -12,7 +12,7 @@ Aplikace obsahuje tyto moduly:
 - použití useState, useRef
 - použití React Router a React Icons
 - publikace projektu na Netlify.com
-- použití framworku Tailwind
+- použití frameworku Tailwind
 
 ## Screenshots
 
