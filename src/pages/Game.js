@@ -41,28 +41,29 @@ const Game = () => {
   return (
     <div className='h-screen flex justify-center items-center'>
       {
-        !startGame ? 
-            <section className='h-screen flex flex-col space-y-5 items-center justify-center'>
-              <ul className='w-[80vw] flex flex-col space-y-5 items-center justify-center
+        !startGame ?
+          <section className='h-screen flex flex-col space-y-5 items-center justify-center'>
+            <ul className='w-[80vw] flex flex-col space-y-5 items-center justify-center
                              sm:flex-row sm:justify-evenly sm:space-y-0'>
-                <li onClick={() => { setData(houseQuestions); setImage(houseImage1); setStartGame(true) }}>
-                  <MenuItem value="house" imageName={houseImage} item="House" />
-                </li>
-                <li onClick={() => { setData(clothesQuestions); setImage(clothesImage1); setStartGame(true) }}>
-                  <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
-                </li>
-              </ul>
-                <div>
-                  <Link to="/"><HomeIcon /></Link>
-                </div>
-            </section> :
-          <section  className='h-screen flex flex-col justify-center items-center'>
+              <li onClick={() => { setData(houseQuestions); setImage(houseImage1); setStartGame(true) }}>
+                <MenuItem value="house" imageName={houseImage} item="House" />
+              </li>
+              <li onClick={() => { setData(clothesQuestions); setImage(clothesImage1); setStartGame(true) }}>
+                <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
+              </li>
+            </ul>
+            <div>
+              <Link to="/"><HomeIcon /></Link>
+            </div>
+          </section> :
+          <section className='h-screen flex flex-col justify-center items-center'>
             <Questions checkAnswer={checkAnswer} index={index} data={data} image={image} selectedAnswer={selectedAnswer} />
             {(index < data.length - 1) ?
               <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer}
               /> :
               <Link to="/"><HomeIcon /></Link>}
           </section>
+
       }
     </div>
   )
