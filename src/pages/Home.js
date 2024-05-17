@@ -19,7 +19,7 @@ const Home = () => {
       <section className='h-screen relative'>
         <Header />
         <Footer />
-        <div className='w-screen absolute bottom-2'>
+        <div className='w-screen absolute bottom-2 cursor-pointer'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-black mx-auto animate-bounce" onClick={scrollToMenu}>
             <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
           </svg>

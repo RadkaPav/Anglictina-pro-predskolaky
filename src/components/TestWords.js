@@ -5,7 +5,7 @@ const TestWords = ({ index, checkAnswer, data, selectedAnswer, correctAnswer, ne
     return (
         <div className='flex flex-col justify-center items-center border-2 border-solid border-black rounded-xl bg-white p-2 mb-5 max-w-[90vw] max-h-[85vh]'>
             <div className="flex flex-col justify-center items-center w-[90%] h-[80%] mx-5 space-y-5 
-                    sm:flex-row sm:space-y-0 ">
+                    sm:flex-row sm:space-y-0 sm:space-x-5">
                 {
                     data[index].allAnswers.map((item) => {
 
