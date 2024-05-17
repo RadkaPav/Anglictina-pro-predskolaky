@@ -6,8 +6,8 @@ const Arrow = ({ nextQuestion, selectedAnswer, correctAnswer }) => {
   return (
     <div>
       <FaArrowAltCircleRight
-        className={selectedAnswer === correctAnswer ? 'arrow' : "arrow disabled"}
-        onClick={() => nextQuestion()} />
+        className={selectedAnswer === correctAnswer ? 'text-green-600 text-4xl cursor-pointer my-3' : "text-slate-600 text-4xl cursor-pointer my-3 disabled"}
+        onClick={selectedAnswer === correctAnswer ? () => nextQuestion() : null} />
     </div>
   )
 }

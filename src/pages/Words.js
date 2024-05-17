@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaHome } from "react-icons/fa"
+import HomeIcon from '../components/HomeIcon'
 import Word from "../components/Word"
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -17,7 +17,7 @@ const Words = () => {
   const [data, setData] = useState()
  
   return (
-    <div>
+    <div className='flex flex-col justify-center items-center h-screen'>
       {
         startGame ? <Word data={data} /> :
           <>
@@ -33,7 +33,7 @@ const Words = () => {
                   <MenuItem value="winter" imageName={winterImage} item="Winter" />
                 </li>
                 <li>
-                  <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
+                  <Link to="/"><HomeIcon /></Link>
                 </li>
               </ul>
             </section>

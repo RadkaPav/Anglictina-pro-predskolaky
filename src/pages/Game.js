@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Questions from '../components/Questions'
 import { Link } from 'react-router-dom'
-import { FaHome } from "react-icons/fa"
+import HomeIcon from '../components/HomeIcon'
 import Arrow from '../components/Arrow'
 import houseQuestions from '../data/house-questions'
 import clothesQuestions from '../data/clothesQuestions'
@@ -43,7 +43,7 @@ const Game = () => {
   const correctAnswer = data[index].answer
 
   return (
-    <div>
+    <div className='flex justify-center items-center h-screen'>
       {
         !startGame ?
           <>
@@ -57,18 +57,18 @@ const Game = () => {
                   <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
                 </li>
                 <li>
-                  <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
+                  <Link to="/"><HomeIcon /></Link>
                 </li>
               </ul>
             </section>
           </> :
-          <div>
+          <section  className='flex flex-col justify-center items-center'>
             <Questions checkAnswer={checkAnswer} index={index} data={data} image={image} selectedAnswer={selectedAnswer} />
             {(index < data.length - 1) ?
               <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer}
               /> :
-              <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>}
-          </div>
+              <Link to="/"><HomeIcon /></Link>}
+          </section>
       }
     </div>
   )

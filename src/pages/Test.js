@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaHome } from "react-icons/fa"
+import HomeIcon from '../components/HomeIcon'
 import TestWords from '../components/TestWords'
 import Arrow from '../components/Arrow'
 import house from '../data/house'
@@ -50,7 +50,7 @@ const Test = () => {
     }
 
     return (
-        <div>
+        <div className='flex flex-col justify-center items-center h-screen'>
             {
                 !startGame ?
                     <>
@@ -66,24 +66,15 @@ const Test = () => {
                                     <MenuItem value="winter" imageName={winterImage} item="Winter" />
                                 </li>
                                 <li>
-                                    <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
+                                    <Link to="/"><HomeIcon /></Link>
                                 </li>
                             </ul>
                         </section>
                     </> :
-                    // play ?
-                        <section>
-                            <div className='container'>
-                                <TestWords data={data} setData={setData} index={index} checkAnswer={checkAnswer} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} />
-                                {(index < data.length - 1) ? <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} /> : <div></div>
-                                }
-                            </div>
-                            <Link to="/"><FaHome className='text-5xl text-green-600 animate-pulse' /></Link>
-                        </section>
-                        //  :
-                        // <div>
-                        //     <button onClick={newGame} className='play'>Play</button>
-                        // </div>
+                    <section className='flex flex-col justify-center items-center h-screen'>
+                        <TestWords data={data} setData={setData} index={index} checkAnswer={checkAnswer} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} nextQuestion={nextQuestion} />
+                        <Link to="/"><HomeIcon /></Link>
+                    </section>
             }
         </div>
     )
