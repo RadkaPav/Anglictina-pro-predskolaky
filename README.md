@@ -16,7 +16,11 @@ Aplikace obsahuje tyto moduly:
 
 ## Screenshots
 
-![Snímek obrazovky 2024-05-17 230749](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/e44a0f88-35fb-46da-9277-0edb7e4619e4)
+![image](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/63c5ec00-5149-4185-abbb-15deb914ff53)
+![image](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/8ec56c00-82a6-4921-b233-7b15f500fe70)
+![image](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/3e0991d4-758b-4395-bdd4-9b09b7b0a053)
+![image](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/202dd377-d8c3-4d9f-86ab-0901640aeb3b)
+
 
 # Getting Started with Create React App
 
