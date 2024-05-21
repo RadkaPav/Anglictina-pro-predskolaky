@@ -1,3 +1,27 @@
+# Popis projektu
+Cílem bylo vytvořit webovou aplikaci na procvičování angličtiny pro děti, které ještě neumí číst.\
+\
+Aplikace obsahuje tyto moduly:
+- flashcards: na kartičce se zobrazí obrázek, po kliknutí na přehrávač se přehraje zvukový záznam slova
+- quiz: výběr ze dvou obrázků (slov), po kliknutí na přehrávač se přehraje slovo, úkolem je vybrat správný obrázek, správnost volby se potvrdí barevným rámečkem, po správné odpovědi je možné pokračovat na další úkol
+- questions: po kliknutí na přehrávač se přehraje otázka vztahující se k zobrazenému obrázku, odpověď je výběrem ze dvou možností, po kliknutí na odpověď se přehraje zvuková nahrávka, po správné odpovědi lze pokračovat k další otázce
+
+## Co jsem se v projektu naučila
+- vytvořit webovou aplikaci pomocí javascriptové knihovny React.js
+- rozdělení aplikace do komponent
+- použití useState, useRef
+- použití React Router a React Icons
+- publikace projektu na Netlify.com
+- použití frameworku Tailwind
+
+## Screenshots
+
+![image](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/63c5ec00-5149-4185-abbb-15deb914ff53)
+![image](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/8ec56c00-82a6-4921-b233-7b15f500fe70)
+![image](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/3e0991d4-758b-4395-bdd4-9b09b7b0a053)
+![image](https://github.com/RadkaPav/Anglictina-pro-predskolaky/assets/153281974/202dd377-d8c3-4d9f-86ab-0901640aeb3b)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

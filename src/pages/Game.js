@@ -18,6 +18,19 @@ const Game = () => {
   const [image, setImage] = useState()
   const [index, setIndex] = useState(0)
 
+  const selectOption = (e) => {
+    const option = e.target.attributes[0].value
+    if (option === "house") {
+      setData(houseQuestions)
+      setImage(houseImage)
+    }
+    if (option === "clothes") {
+      setData(clothesQuestions)
+      setImage(clothesImage)
+    }
+    setStartGame(true)
+  }
+
   const nextQuestion = (e) => {
     setIndex(index + 1)
   }
