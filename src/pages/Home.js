@@ -6,6 +6,7 @@ import MenuItem from '../components/MenuItem'
 import flashcardsImage from '../img-sound/flashcards.png'
 import quizImage from '../img-sound/quiz.png'
 import questionMarkImage from '../img-sound/question-mark.png'
+import memoryGameImage from '../img-sound/memory-game.png'
 
 const Home = () => {
   const menu = useRef(null)
@@ -25,10 +26,11 @@ const Home = () => {
           </svg>
         </div>
       </section>
-
-      <section className='flex justify-center' id='menu' ref={menu}>
-        <ul className='h-screen w-[80vw] flex flex-col space-y-5 items-center justify-center 
-                       sm:flex-row sm:justify-evenly sm:space-y-0'>
+      
+      <section className='' id='menu' ref={menu}>
+        <ul className='h-screen w-full mx-auto flex flex-col justify-center items-center space-y-4 
+                       sm:w-[60vw] sm:flex-row sm:justify-evenly sm:space-y-0 sm:flex-wrap
+                       md:w-[90vw]'>
           <Link to="/words">
             <MenuItem imageName={flashcardsImage} item="Flashcards" />
           </Link>
@@ -37,6 +39,9 @@ const Home = () => {
           </Link>
           <Link to="/game">
             <MenuItem imageName={questionMarkImage} item="Questions" />
+          </Link>
+          <Link to="/memory">
+            <MenuItem imageName={memoryGameImage} item="Memory game" />
           </Link>
         </ul>
       </section>
