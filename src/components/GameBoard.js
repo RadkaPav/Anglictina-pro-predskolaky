@@ -1,6 +1,5 @@
 import Card from "./Card"
 import Button from "./Button"
-import HomeIcon from "./HomeIcon";
 import { useState, useEffect } from "react"
 import { FaArrowRotateLeft } from "react-icons/fa6";
 
