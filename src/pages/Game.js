@@ -67,9 +67,10 @@ const Game = () => {
         !startGame ? <Menu selectOption={selectOption} options={options}/> :
           <section className='h-screen flex flex-col justify-center items-center'>
             <Questions checkAnswer={checkAnswer} index={index} data={data} image={image} selectedAnswer={selectedAnswer} />
-            {(index < data.length - 1) ?
-              <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} /> :
-              <Link to="/"><HomeIcon /></Link>}
+            {(index < data.length - 1) &&
+              <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} />
+            }
+            <Link to="/"><HomeIcon /></Link>
           </section>
       }
     </div>
