@@ -5,11 +5,12 @@ Aplikace obsahuje tyto moduly:
 - flashcards: na kartičce se zobrazí obrázek, po kliknutí na přehrávač se přehraje zvukový záznam slova
 - quiz: výběr ze dvou obrázků (slov), po kliknutí na přehrávač se přehraje slovo, úkolem je vybrat správný obrázek, správnost volby se potvrdí barevným rámečkem, po správné odpovědi je možné pokračovat na další úkol
 - questions: po kliknutí na přehrávač se přehraje otázka vztahující se k zobrazenému obrázku, odpověď je výběrem ze dvou možností, po kliknutí na odpověď se přehraje zvuková nahrávka, po správné odpovědi lze pokračovat k další otázce
+- memory game: hra pexeso, při otočení kartičky se spustí zvuková nahrávka, výběr ze tří obtížností
 
 ## Co jsem se v projektu naučila
 - vytvořit webovou aplikaci pomocí javascriptové knihovny React.js
 - rozdělení aplikace do komponent
-- použití useState, useRef
+- použití useState, useEffect a useRef
 - použití React Router a React Icons
 - publikace projektu na Netlify.com
 - použití frameworku Tailwind
