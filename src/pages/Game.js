@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Questions from '../components/Questions'
 import HomeIcon from '../components/HomeIcon'
 import Arrow from '../components/Arrow'
-import MenuItem from '../components/MenuItem'
+import Menu from '../components/Menu'
 import houseQuestions from '../data/house-questions'
 import clothesQuestions from '../data/clothesQuestions'
 import answers from '../data/answers'
@@ -18,16 +18,26 @@ const Game = () => {
   const [image, setImage] = useState()
   const [index, setIndex] = useState(0)
 
-  const selectOption = (e) => {
-    const option = e.target.attributes[0].value
-    if (option === "house") {
-      setData(houseQuestions)
-      setImage(houseImage)
+  const options = [
+    {
+      id: 1,
+      name: "House",
+      image: houseImage,
+      item: houseQuestions, 
+      questionsImage: houseImage1
+    },
+    {
+      id: 2,
+      name: "Clothes",
+      image: clothesImage,
+      item: clothesQuestions,
+      questionsImage: clothesImage1
     }
-    if (option === "clothes") {
-      setData(clothesQuestions)
-      setImage(clothesImage)
-    }
+  ]
+
+  const selectOption = (option, image) => {
+    setData(option)
+    setImage(image)
     setStartGame(true)
   }
 
@@ -50,33 +60,17 @@ const Game = () => {
 
   const selectedAnswer = data[index].selectedAnswer
   const correctAnswer = data[index].answer
-
+  
   return (
     <div className='h-screen flex justify-center items-center'>
       {
-        !startGame ?
-          <section className='h-screen flex flex-col space-y-5 items-center justify-center'>
-            <ul className='w-[80vw] flex flex-col space-y-5 items-center justify-center
-                             sm:flex-row sm:justify-evenly sm:space-y-0'>
-              <li onClick={() => { setData(houseQuestions); setImage(houseImage1); setStartGame(true) }}>
-                <MenuItem value="house" imageName={houseImage} item="House" />
-              </li>
-              <li onClick={() => { setData(clothesQuestions); setImage(clothesImage1); setStartGame(true) }}>
-                <MenuItem value="clothes" imageName={clothesImage} item="Clothes" />
-              </li>
-            </ul>
-            <div>
-              <Link to="/"><HomeIcon /></Link>
-            </div>
-          </section> :
+        !startGame ? <Menu selectOption={selectOption} options={options}/> :
           <section className='h-screen flex flex-col justify-center items-center'>
             <Questions checkAnswer={checkAnswer} index={index} data={data} image={image} selectedAnswer={selectedAnswer} />
             {(index < data.length - 1) ?
-              <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer}
-              /> :
+              <Arrow nextQuestion={nextQuestion} selectedAnswer={selectedAnswer} correctAnswer={correctAnswer} /> :
               <Link to="/"><HomeIcon /></Link>}
           </section>
-
       }
     </div>
   )
